@@ -1,0 +1,225 @@
+{% extends 'portfo_app/base.html' %}
+
+{% block title %}Contact Me - IT Professional Portfolio{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1 class="display-4 fw-bold">GET IN TOUCH</h1>
+        <p class="lead text-muted">Let's discuss your project or opportunity</p>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row g-5">
+            <!-- Contact Form -->
+            <div class="col-lg-7">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h3 class="mb-4">Send Me a Message</h3>
+                        <form method="post" novalidate>
+                            {% csrf_token %}
+                            
+                            <div class="mb-3">
+                                <label for="{{ form.name.id_for_label }}" class="form-label">Your Name</label>
+                                {{ form.name }}
+                                {% if form.name.errors %}
+                                    <div class="invalid-feedback d-block">
+                                        {{ form.name.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="{{ form.email.id_for_label }}" class="form-label">Email Address</label>
+                                {{ form.email }}
+                                {% if form.email.errors %}
+                                    <div class="invalid-feedback d-block">
+                                        {{ form.email.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="{{ form.subject.id_for_label }}" class="form-label">Subject</label>
+                                {{ form.subject }}
+                                {% if form.subject.errors %}
+                                    <div class="invalid-feedback d-block">
+                                        {{ form.subject.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="{{ form.message.id_for_label }}" class="form-label">Message</label>
+                                {{ form.message }}
+                                {% if form.message.errors %}
+                                    <div class="invalid-feedback d-block">
+                                        {{ form.message.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-lg w-100">
+                                <i class="fas fa-paper-plane me-2"></i>Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Information -->
+            <div class="col-lg-5">
+                <div class="mb-4">
+                    <h3 class="mb-4">Contact Information</h3>
+                    <div class="card border-0 shadow-sm mb-3">
+                        <div class="card-body">
+                            <div class="d-flex align-items-start">
+                                <div class="icon-circle bg-primary bg-opacity-10 me-3">
+                                    <i class="fas fa-envelope fa-lg text-primary"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-1">Email</h6>
+                                    <a href="mailto:maxzygh8@gamail.com" class="text-decoration-none">maxzygh8@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card border-0 shadow-sm mb-3">
+                        <div class="card-body">
+                            <div class="d-flex align-items-start">
+                                <div class="icon-circle bg-primary bg-opacity-10 me-3">
+                                    <i class="fas fa-phone fa-lg text-primary"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-1">Phone</h6>
+                                    <a href="tel:+233552123657" class="text-decoration-none">+233 (0) 552123657</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card border-0 shadow-sm mb-3">
+                        <div class="card-body">
+                            <div class="d-flex align-items-start">
+                                <div class="icon-circle bg-primary bg-opacity-10 me-3">
+                                    <i class="fas fa-map-marker-alt fa-lg text-primary"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-1">Location</h6>
+                                    <p class="mb-0 text-muted">Accra, Ghana</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Social Links -->
+                <div>
+                    <h3 class="mb-4">Connect With Me</h3>
+                    <div class="d-flex gap-3">
+                        <a href="https://github.com/AMOAHM" target="_blank" class="btn btn-outline-dark btn-lg">
+                            <i class="fab fa-github fa-lg"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/dake-amoah-maxwell-95a770302" target="_blank" class="btn btn-outline-primary btn-lg">
+                            <i class="fab fa-linkedin fa-lg"></i>
+                        </a>
+                        <a href="https://twitter.com/@maxzy_gh" target="_blank" class="btn btn-outline-info btn-lg">
+                            <i class="fab fa-twitter fa-lg"></i>
+                        </a>
+                        <a href="mailto:maxzygh8@gmail.com" class="btn btn-outline-danger btn-lg">
+                            <i class="fas fa-envelope fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Availability -->
+                <div class="mt-4">
+                    <div class="alert alert-success border-0">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-check-circle fa-2x me-3"></i>
+                            <div>
+                                <h6 class="mb-1">Available for Work</h6>
+                                <small>Currently accepting new projects and opportunities</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Frequently Asked Questions</h2>
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item border-0 shadow-sm mb-3">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                What services do you offer?
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                I specialize in network infrastructure design and implementation, database management and optimization, 
+                                hardware troubleshooting and repair, and full-stack web development. I can help with both individual 
+                                projects and ongoing IT support.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item border-0 shadow-sm mb-3">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                How quickly can you respond to inquiries?
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                I typically respond to all inquiries within 24 hours on business days. For urgent matters, 
+                                please mention it in your message subject line.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item border-0 shadow-sm mb-3">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                Do you work remotely or on-site?
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                I'm flexible and can work both remotely and on-site depending on the project requirements. 
+                                For hardware-related projects, on-site work may be necessary, while networking and web development 
+                                projects can often be handled remotely.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item border-0 shadow-sm">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                What is your typical project timeline?
+                            </button>
+                        </h2>
+                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Project timelines vary based on scope and complexity. Small projects may take 1-2 weeks, 
+                                while larger implementations can span several months. I provide detailed timelines during 
+                                the initial consultation phase.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

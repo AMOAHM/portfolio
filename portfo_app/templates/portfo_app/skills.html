@@ -1,0 +1,229 @@
+{% extends 'portfo_app/base.html' %}
+
+{% block title %}Skills - IT Professional Portfolio{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1 class="display-4 fw-bold">TECHNICAL SKILLS</h1>
+        <p class="lead text-muted">A comprehensive overview of my technical expertise</p>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <!-- Networking Skills -->
+        <div class="mb-5">
+            <div class="d-flex align-items-center mb-4">
+                <div class="icon-circle bg-primary bg-opacity-10 me-3">
+                    <i class="fas fa-network-wired fa-2x text-primary"></i>
+                </div>
+                <div>
+                    <h2 class="mb-0">Networking</h2>
+                    <p class="text-muted mb-0">Infrastructure design, configuration & security</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                {% if networking_skills %}
+                    {% for skill in networking_skills %}
+                    <div class="col-lg-6">
+                        <div class="skill-item">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="fw-semibold">
+                                    {% if skill.icon %}<i class="{{ skill.icon }} me-2"></i>{% endif %}
+                                    {{ skill.name }}
+                                </span>
+                                <span class="text-muted">{{ skill.proficiency }}%</span>
+                            </div>
+                            <div class="progress" style="height: 10px;">
+                                <div class="progress-bar bg-primary" role="progressbar" 
+                                     style="width: {{ skill.proficiency }}%;" 
+                                     aria-valuenow="{{ skill.proficiency }}" 
+                                     aria-valuemin="0" aria-valuemax="100">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="col-12">
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle me-2"></i>
+                            Networking skills will be displayed here. Add them via the Django admin.
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Database Management Skills -->
+        <div class="mb-5">
+            <div class="d-flex align-items-center mb-4">
+                <div class="icon-circle bg-success bg-opacity-10 me-3">
+                    <i class="fas fa-database fa-2x text-success"></i>
+                </div>
+                <div>
+                    <h2 class="mb-0">Database Management</h2>
+                    <p class="text-muted mb-0">SQL, NoSQL, optimization & administration</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                {% if database_skills %}
+                    {% for skill in database_skills %}
+                    <div class="col-lg-6">
+                        <div class="skill-item">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="fw-semibold">
+                                    {% if skill.icon %}<i class="{{ skill.icon }} me-2"></i>{% endif %}
+                                    {{ skill.name }}
+                                </span>
+                                <span class="text-muted">{{ skill.proficiency }}%</span>
+                            </div>
+                            <div class="progress" style="height: 10px;">
+                                <div class="progress-bar bg-success" role="progressbar" 
+                                     style="width: {{ skill.proficiency }}%;" 
+                                     aria-valuenow="{{ skill.proficiency }}" 
+                                     aria-valuemin="0" aria-valuemax="100">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="col-12">
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle me-2"></i>
+                            Database skills will be displayed here. Add them via the Django admin.
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Hardware Engineering Skills -->
+        <div class="mb-5">
+            <div class="d-flex align-items-center mb-4">
+                <div class="icon-circle bg-warning bg-opacity-10 me-3">
+                    <i class="fas fa-microchip fa-2x text-warning"></i>
+                </div>
+                <div>
+                    <h2 class="mb-0">Hardware Engineering</h2>
+                    <p class="text-muted mb-0">Assembly, repair, diagnostics & maintenance</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                {% if hardware_skills %}
+                    {% for skill in hardware_skills %}
+                    <div class="col-lg-6">
+                        <div class="skill-item">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="fw-semibold">
+                                    {% if skill.icon %}<i class="{{ skill.icon }} me-2"></i>{% endif %}
+                                    {{ skill.name }}
+                                </span>
+                                <span class="text-muted">{{ skill.proficiency }}%</span>
+                            </div>
+                            <div class="progress" style="height: 10px;">
+                                <div class="progress-bar bg-warning" role="progressbar" 
+                                     style="width: {{ skill.proficiency }}%;" 
+                                     aria-valuenow="{{ skill.proficiency }}" 
+                                     aria-valuemin="0" aria-valuemax="100">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="col-12">
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle me-2"></i>
+                            Hardware skills will be displayed here. Add them via the Django admin.
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Web Development Skills -->
+        <div class="mb-5">
+            <div class="d-flex align-items-center mb-4">
+                <div class="icon-circle bg-info bg-opacity-10 me-3">
+                    <i class="fas fa-code fa-2x text-info"></i>
+                </div>
+                <div>
+                    <h2 class="mb-0">Web Development</h2>
+                    <p class="text-muted mb-0">Full-stack development & modern frameworks</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                {% if web_skills %}
+                    {% for skill in web_skills %}
+                    <div class="col-lg-6">
+                        <div class="skill-item">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="fw-semibold">
+                                    {% if skill.icon %}<i class="{{ skill.icon }} me-2"></i>{% endif %}
+                                    {{ skill.name }}
+                                </span>
+                                <span class="text-muted">{{ skill.proficiency }}%</span>
+                            </div>
+                            <div class="progress" style="height: 10px;">
+                                <div class="progress-bar bg-info" role="progressbar" 
+                                     style="width: {{ skill.proficiency }}%;" 
+                                     aria-valuenow="{{ skill.proficiency }}" 
+                                     aria-valuemin="0" aria-valuemax="100">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="col-12">
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle me-2"></i>
+                            Web development skills will be displayed here. Add them via the Django admin.
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Additional Competencies -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Additional Competencies</h2>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="text-center">
+                    <i class="fas fa-shield-alt fa-3x text-primary mb-3"></i>
+                    <h5>Cybersecurity</h5>
+                    <p class="text-muted">Security best practices, vulnerability assessment</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="text-center">
+                    <i class="fas fa-cloud fa-3x text-primary mb-3"></i>
+                    <h5>Cloud Computing</h5>
+                    <p class="text-muted">AWS, Azure, cloud architecture</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="text-center">
+                    <i class="fas fa-terminal fa-3x text-primary mb-3"></i>
+                    <h5>System Administration</h5>
+                    <p class="text-muted">Linux, Windows Server, automation</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="text-center">
+                    <i class="fas fa-project-diagram fa-3x text-primary mb-3"></i>
+                    <h5>Project Management</h5>
+                    <p class="text-muted">Agile, Scrum, team collaboration</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

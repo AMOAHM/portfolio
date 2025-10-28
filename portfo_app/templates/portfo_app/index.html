@@ -1,0 +1,154 @@
+{% extends 'portfo_app/base.html' %}
+{% load static %}
+
+{% block title %}Home - IT Professional Portfolio{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center min-vh-100">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="display-3 fw-bold mb-3">Hi, I'm <span class="text-primary">Amoah Maxwell Dake</span></h1>
+                <h2 class="h3 mb-4">IT & Network Specialist | Database & Web Developer</h2>
+                <p class="lead text-muted mb-5">
+                    Passionate IT professional with expertise in networking infrastructure, 
+                    database management, hardware engineering, and modern web development. 
+                    I turn complex technical challenges into elegant solutions.
+                </p>
+                <div class="d-flex gap-3 justify-content-center flex-wrap">
+                    <a href="{% static 'documents/CV.pdf' %}" class="btn btn-primary btn-lg" download>
+                        <i class="fas fa-download me-2"></i>Download CV
+                    </a>
+                    <a href="{% url 'projects' %}" class="btn btn-outline-primary btn-lg">
+                        <i class="fas fa-folder-open me-2"></i>View Projects
+                    </a>
+                    <a href="{% url 'contact' %}" class="btn btn-outline-secondary btn-lg">
+                        <i class="fas fa-envelope me-2"></i>Get in Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Quick Skills Overview -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Areas of Expertise</h2>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 text-center border-0 shadow-sm hover-lift">
+                    <div class="card-body">
+                        <div class="icon-circle bg-primary bg-opacity-10 mx-auto mb-3">
+                            <i class="fas fa-network-wired fa-3x text-primary"></i>
+                        </div>
+                        <h5 class="card-title">Networking</h5>
+                        <p class="card-text text-muted">Network design, configuration, troubleshooting, and security implementation</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 text-center border-0 shadow-sm hover-lift">
+                    <div class="card-body">
+                        <div class="icon-circle bg-success bg-opacity-10 mx-auto mb-3">
+                            <i class="fas fa-database fa-3x text-success"></i>
+                        </div>
+                        <h5 class="card-title">Database Management</h5>
+                        <p class="card-text text-muted">SQL/NoSQL database design, optimization, and administration</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 text-center border-0 shadow-sm hover-lift">
+                    <div class="card-body">
+                        <div class="icon-circle bg-warning bg-opacity-10 mx-auto mb-3">
+                            <i class="fas fa-microchip fa-3x text-warning"></i>
+                        </div>
+                        <h5 class="card-title">Hardware Engineering</h5>
+                        <p class="card-text text-muted">PC assembly, repair, diagnostics, and system maintenance</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 text-center border-0 shadow-sm hover-lift">
+                    <div class="card-body">
+                        <div class="icon-circle bg-info bg-opacity-10 mx-auto mb-3">
+                            <i class="fas fa-code fa-3x text-info"></i>
+                        </div>
+                        <h5 class="card-title">Web Development</h5>
+                        <p class="card-text text-muted">Full-stack development with modern frameworks and best practices</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5">
+            <a href="{% url 'skills' %}" class="btn btn-primary">
+                View All Skills <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Projects -->
+{% if featured_projects %}
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Featured Projects</h2>
+        <div class="row g-4">
+            {% for project in featured_projects %}
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 shadow hover-lift">
+                    {% if project.image %}
+                    <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }}">
+                    {% else %}
+                    <div class="card-img-top bg-secondary d-flex align-items-center justify-content-center" style="height: 200px;">
+                        <i class="fas fa-project-diagram fa-4x text-white"></i>
+                    </div>
+                    {% endif %}
+                    <div class="card-body">
+                        <span class="badge bg-primary mb-2">{{ project.get_category_display }}</span>
+                        <h5 class="card-title">{{ project.title }}</h5>
+                        <p class="card-text text-muted">{{ project.description|truncatewords:20 }}</p>
+                        <div class="mb-3">
+                            {% for tool in project.get_tools_list %}
+                            <span class="badge bg-light text-dark me-1">{{ tool }}</span>
+                            {% endfor %}
+                        </div>
+                        <div class="d-flex gap-2">
+                            {% if project.github_link %}
+                            <a href="{{ project.github_link }}" class="btn btn-sm btn-outline-dark" target="_blank">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            {% endif %}
+                            {% if project.live_link %}
+                            <a href="{{ project.live_link }}" class="btn btn-sm btn-outline-primary" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="text-center mt-5">
+            <a href="{% url 'projects' %}" class="btn btn-primary">
+                View All Projects <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Call to Action -->
+<section class="py-5 bg-primary text-white">
+    <div class="container text-center">
+        <h2 class="mb-4">Let's Work Together</h2>
+        <p class="lead mb-4">Have a project in mind? I'd love to hear about it.</p>
+        <a href="{% url 'contact' %}" class="btn btn-light btn-lg">
+            Contact Me <i class="fas fa-arrow-right ms-2"></i>
+        </a>
+    </div>
+</section>
+{% endblock %}
