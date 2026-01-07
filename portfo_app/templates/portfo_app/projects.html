@@ -16,19 +16,24 @@
         <!-- Filter Buttons -->
         <div class="text-center mb-5">
             <div class="btn-group flex-wrap" role="group">
-                <a href="?category=all" class="btn {% if current_filter == 'all' %}btn-primary{% else %}btn-outline-primary{% endif %}">
+                <a href="?category=all"
+                    class="btn {% if current_filter == 'all' %}btn-primary{% else %}btn-outline-primary{% endif %}">
                     <i class="fas fa-th me-2"></i>All Projects
                 </a>
-                <a href="?category=networking" class="btn {% if current_filter == 'networking' %}btn-primary{% else %}btn-outline-primary{% endif %}">
+                <a href="?category=networking"
+                    class="btn {% if current_filter == 'networking' %}btn-primary{% else %}btn-outline-primary{% endif %}">
                     <i class="fas fa-network-wired me-2"></i>Networking
                 </a>
-                <a href="?category=database" class="btn {% if current_filter == 'database' %}btn-primary{% else %}btn-outline-primary{% endif %}">
+                <a href="?category=database"
+                    class="btn {% if current_filter == 'database' %}btn-primary{% else %}btn-outline-primary{% endif %}">
                     <i class="fas fa-database me-2"></i>Database
                 </a>
-                <a href="?category=hardware" class="btn {% if current_filter == 'hardware' %}btn-primary{% else %}btn-outline-primary{% endif %}">
+                <a href="?category=hardware"
+                    class="btn {% if current_filter == 'hardware' %}btn-primary{% else %}btn-outline-primary{% endif %}">
                     <i class="fas fa-microchip me-2"></i>Hardware
                 </a>
-                <a href="?category=web" class="btn {% if current_filter == 'web' %}btn-primary{% else %}btn-outline-primary{% endif %}">
+                <a href="?category=web"
+                    class="btn {% if current_filter == 'web' %}btn-primary{% else %}btn-outline-primary{% endif %}">
                     <i class="fas fa-code me-2"></i>Web Dev
                 </a>
             </div>
@@ -41,9 +46,11 @@
             <div class="col-md-6 col-lg-4">
                 <div class="card h-100 border-0 shadow hover-lift">
                     {% if project.image %}
-                    <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }}" style="height: 220px; object-fit: cover;">
+                    <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }}"
+                        style="height: 220px; object-fit: cover;">
                     {% else %}
-                    <div class="card-img-top bg-gradient d-flex align-items-center justify-content-center" style="height: 220px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                    <div class="card-img-top bg-gradient d-flex align-items-center justify-content-center"
+                        style="height: 220px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
                         <i class="fas fa-project-diagram fa-4x text-white opacity-75"></i>
                     </div>
                     {% endif %}
@@ -58,7 +65,7 @@
                         </div>
                         <h5 class="card-title">{{ project.title }}</h5>
                         <p class="card-text text-muted flex-grow-1">{{ project.description }}</p>
-                        
+
                         <!-- Tools Used -->
                         <div class="mb-3">
                             <small class="text-muted d-block mb-2"><strong>Tools & Technologies:</strong></small>
@@ -68,17 +75,19 @@
                                 {% endfor %}
                             </div>
                         </div>
-                        
+
                         <!-- Project Links -->
                         <div class="mt-auto">
                             <div class="d-flex gap-2">
                                 {% if project.github_link %}
-                                <a href="{{ project.github_link }}" class="btn btn-sm btn-outline-dark flex-grow-1" target="_blank">
+                                <a href="{{ project.github_link }}" class="btn btn-sm btn-outline-dark flex-grow-1"
+                                    target="_blank">
                                     <i class="fab fa-github me-1"></i>View Code
                                 </a>
                                 {% endif %}
                                 {% if project.live_link %}
-                                <a href="{{ project.live_link }}" class="btn btn-sm btn-primary flex-grow-1" target="_blank">
+                                <a href="{{ project.live_link }}" class="btn btn-sm btn-primary flex-grow-1"
+                                    target="_blank">
                                     <i class="fas fa-external-link-alt me-1"></i>Live Demo
                                 </a>
                                 {% endif %}
@@ -111,7 +120,7 @@
 </section>
 
 <!-- Call to Action -->
-<section class="py-5 bg-light">
+<section class="py-5">
     <div class="container text-center">
         <h2 class="mb-4">Interested in Collaborating?</h2>
         <p class="lead text-muted mb-4">I'm always open to discussing new projects and opportunities.</p>

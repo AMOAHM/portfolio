@@ -8,18 +8,7 @@
     --warning-color: #f59e0b;
     --info-color: #06b6d4;
 
-    /* Theme Variables - Light Mode */
-    --bg-color: #ffffff;
-    --text-color: #333333;
-    --card-bg: #ffffff;
-    --nav-bg: #212529;
-    --footer-bg: #212529;
-    --card-border: rgba(0, 0, 0, 0.1);
-    --premium-bg: radial-gradient(circle at 10% 20%, rgb(239, 246, 255) 0%, rgb(219, 234, 254) 100%);
-}
-
-/* Dark Mode Variables */
-body.dark-mode {
+    /* Theme Variables - Permanent Dark Mode */
     --bg-color: #0f172a;
     --text-color: #f1f5f9;
     --card-bg: rgba(30, 41, 59, 0.95);
@@ -27,12 +16,19 @@ body.dark-mode {
     --footer-bg: #020617;
     --card-border: rgba(255, 255, 255, 0.1);
     --premium-bg: radial-gradient(circle at 10% 20%, rgb(15, 23, 42) 0%, rgb(2, 6, 23) 100%);
+}
 
-    /* Override background for dark mode to be darker */
-    background: linear-gradient(rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.95)), url('../images/background.jpg');
+/* Dark Mode Background Default */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: linear-gradient(rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.95)), url('../images/hero-bg.jpg') !important;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    padding-top: 56px;
+    transition: color 0.3s ease;
 }
 
 /* Global Styles */
@@ -415,4 +411,68 @@ body.dark-mode .accordion-button:not(.collapsed) {
 
 ::-webkit-scrollbar-thumb:hover {
     background: #1d4ed8;
+}
+
+/* Dark Mode Bootstrap Overrides */
+.bg-light,
+.bg-white {
+    background-color: var(--card-bg) !important;
+    color: var(--text-color) !important;
+    border: 1px solid var(--card-border);
+}
+
+.text-dark {
+    color: var(--text-color) !important;
+}
+
+.text-muted {
+    color: #cbd5e1 !important;
+}
+
+/* FAQ / Accordion Styling */
+.accordion-item {
+    background-color: transparent;
+    border: 1px solid var(--card-border);
+    margin-bottom: 1rem;
+    border-radius: 0.5rem !important;
+    overflow: hidden;
+}
+
+.accordion-button {
+    background-color: rgba(30, 41, 59, 0.8);
+    color: var(--text-color);
+    box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: rgba(59, 130, 246, 0.2);
+    color: #60a5fa;
+    box-shadow: none;
+}
+
+.accordion-button::after {
+    filter: invert(1);
+}
+
+.accordion-body {
+    background-color: rgba(15, 23, 42, 0.6);
+    color: #cbd5e1;
+}
+
+/* Verified Dark Mode Name Highlight */
+.text-gradient-gold {
+    background: linear-gradient(to right, #f59e0b, #fbbf24);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: #fbbf24;
+    font-weight: 800;
+    display: inline-block;
+}
+
+/* Ensure stat-card has a background */
+.stat-card {
+    transition: all 0.3s ease;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
 }

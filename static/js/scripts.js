@@ -1,9 +1,9 @@
 // Wait for DOM to be fully loaded
-document.addEventListener('DOMContentLoaded', function() {
-    
+document.addEventListener('DOMContentLoaded', function () {
+
     // Navbar scroll effect
     const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         if (window.scrollY > 50) {
             navbar.classList.add('shadow-lg');
         } else {
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Animate progress bars on scroll
     const animateProgressBars = () => {
         const progressBars = document.querySelectorAll('.progress-bar');
-        
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Form validation enhancement
     const forms = document.querySelectorAll('form');
     forms.forEach(form => {
-        form.addEventListener('submit', function(e) {
+        form.addEventListener('submit', function (e) {
             if (!form.checkValidity()) {
                 e.preventDefault();
                 e.stopPropagation();
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add animation to cards on scroll
     const observeCards = () => {
         const cards = document.querySelectorAll('.card, .skill-item');
-        
+
         const cardObserver = new IntersectionObserver((entries) => {
             entries.forEach((entry, index) => {
                 if (entry.isIntersecting) {
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Project filter active state
     const filterButtons = document.querySelectorAll('.btn-group a');
     filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             filterButtons.forEach(btn => {
                 btn.classList.remove('btn-primary');
                 btn.classList.add('btn-outline-primary');
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add loading spinner to buttons on form submit
     const submitButtons = document.querySelectorAll('button[type="submit"]');
     submitButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             if (this.closest('form').checkValidity()) {
                 this.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Sending...';
                 this.disabled = true;
@@ -143,38 +143,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Console log for debugging
     console.log('Portfolio site initialized successfully!');
-
-    // Dark Mode Toggle Logic
-    const darkModeToggle = document.getElementById('dark-mode-toggle');
-    const darkModeIcon = document.getElementById('dark-mode-icon');
-    const body = document.body;
-
-    // Check for saved dark mode preference
-    const currentTheme = localStorage.getItem('theme');
-    if (currentTheme === 'dark') {
-        body.classList.add('dark-mode');
-        if (darkModeIcon) {
-            darkModeIcon.classList.remove('fa-moon');
-            darkModeIcon.classList.add('fa-sun');
-        }
-    }
-
-    if (darkModeToggle) {
-        darkModeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            
-            let theme = 'light';
-            if (body.classList.contains('dark-mode')) {
-                theme = 'dark';
-                darkModeIcon.classList.remove('fa-moon');
-                darkModeIcon.classList.add('fa-sun');
-            } else {
-                darkModeIcon.classList.remove('fa-sun');
-                darkModeIcon.classList.add('fa-moon');
-            }
-            localStorage.setItem('theme', theme);
-        });
-    }
 });
 
 // Function to copy text to clipboard
@@ -187,7 +155,7 @@ function copyToClipboard(text) {
 }
 
 // Back to top button functionality
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     const backToTop = document.getElementById('backToTop');
     if (backToTop) {
         if (window.scrollY > 300) {

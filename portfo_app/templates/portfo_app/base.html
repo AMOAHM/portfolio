@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?v=1.2">
 
     {% block extra_css %}{% endblock %}
 </head>
@@ -50,11 +50,6 @@
                     <li class="nav-item">
                         <a class="nav-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}"
                             href="{% url 'contact' %}">Contact</a>
-                    </li>
-                    <li class="nav-item ms-lg-3">
-                        <button id="dark-mode-toggle" class="btn btn-link nav-link" aria-label="Toggle Dark Mode">
-                            <i class="fas fa-moon" id="dark-mode-icon"></i>
-                        </button>
                     </li>
                 </ul>
             </div>
@@ -105,7 +100,7 @@
                     </div>
                 </div>
             </div>
-            <hr class="bg-white">
+            <hr>
             <div class="text-center">
                 <p class="mb-0">&copy; 2026 Amoah Maxwell Dake. All Rights Reserved.</p>
             </div>

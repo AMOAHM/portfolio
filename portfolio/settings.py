@@ -105,3 +105,5 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 }
 # Trigger Reload
+
+# Trigger Reload v2

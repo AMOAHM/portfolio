@@ -25,33 +25,32 @@
             </div>
             <div class="row g-4">
                 {% if networking_skills %}
-                    {% for skill in networking_skills %}
-                    <div class="col-lg-6">
-                        <div class="skill-item">
-                            <div class="d-flex justify-content-between mb-2">
-                                <span class="fw-semibold">
-                                    {% if skill.icon %}<i class="{{ skill.icon }} me-2"></i>{% endif %}
-                                    {{ skill.name }}
-                                </span>
-                                <span class="text-muted">{{ skill.proficiency }}%</span>
-                            </div>
-                            <div class="progress" style="height: 10px;">
-                                <div class="progress-bar bg-primary" role="progressbar" 
-                                     style="width: {{ skill.proficiency }}%;" 
-                                     aria-valuenow="{{ skill.proficiency }}" 
-                                     aria-valuemin="0" aria-valuemax="100">
-                                </div>
+                {% for skill in networking_skills %}
+                <div class="col-lg-6">
+                    <div class="skill-item">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="fw-semibold">
+                                {% if skill.icon %}<i class="{{ skill.icon }} me-2"></i>{% endif %}
+                                {{ skill.name }}
+                            </span>
+                            <span class="text-muted">{{ skill.proficiency }}%</span>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar bg-primary" role="progressbar"
+                                style="width: {{ skill.proficiency }}%;" aria-valuenow="{{ skill.proficiency }}"
+                                aria-valuemin="0" aria-valuemax="100">
                             </div>
                         </div>
                     </div>
-                    {% endfor %}
+                </div>
+                {% endfor %}
                 {% else %}
-                    <div class="col-12">
-                        <div class="alert alert-info">
-                            <i class="fas fa-info-circle me-2"></i>
-                            Networking skills will be displayed here. Add them via the Django admin.
-                        </div>
+                <div class="col-12">
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i>
+                        Networking skills will be displayed here. Add them via the Django admin.
                     </div>
+                </div>
                 {% endif %}
             </div>
         </div>
@@ -69,33 +68,32 @@
             </div>
             <div class="row g-4">
                 {% if database_skills %}
-                    {% for skill in database_skills %}
-                    <div class="col-lg-6">
-                        <div class="skill-item">
-                            <div class="d-flex justify-content-between mb-2">
-                                <span class="fw-semibold">
-                                    {% if skill.icon %}<i class="{{ skill.icon }} me-2"></i>{% endif %}
-                                    {{ skill.name }}
-                                </span>
-                                <span class="text-muted">{{ skill.proficiency }}%</span>
-                            </div>
-                            <div class="progress" style="height: 10px;">
-                                <div class="progress-bar bg-success" role="progressbar" 
-                                     style="width: {{ skill.proficiency }}%;" 
-                                     aria-valuenow="{{ skill.proficiency }}" 
-                                     aria-valuemin="0" aria-valuemax="100">
-                                </div>
+                {% for skill in database_skills %}
+                <div class="col-lg-6">
+                    <div class="skill-item">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="fw-semibold">
+                                {% if skill.icon %}<i class="{{ skill.icon }} me-2"></i>{% endif %}
+                                {{ skill.name }}
+                            </span>
+                            <span class="text-muted">{{ skill.proficiency }}%</span>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar bg-success" role="progressbar"
+                                style="width: {{ skill.proficiency }}%;" aria-valuenow="{{ skill.proficiency }}"
+                                aria-valuemin="0" aria-valuemax="100">
                             </div>
                         </div>
                     </div>
-                    {% endfor %}
+                </div>
+                {% endfor %}
                 {% else %}
-                    <div class="col-12">
-                        <div class="alert alert-info">
-                            <i class="fas fa-info-circle me-2"></i>
-                            Database skills will be displayed here. Add them via the Django admin.
-                        </div>
+                <div class="col-12">
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i>
+                        Database skills will be displayed here. Add them via the Django admin.
                     </div>
+                </div>
                 {% endif %}
             </div>
         </div>
@@ -113,33 +111,32 @@
             </div>
             <div class="row g-4">
                 {% if hardware_skills %}
-                    {% for skill in hardware_skills %}
-                    <div class="col-lg-6">
-                        <div class="skill-item">
-                            <div class="d-flex justify-content-between mb-2">
-                                <span class="fw-semibold">
-                                    {% if skill.icon %}<i class="{{ skill.icon }} me-2"></i>{% endif %}
-                                    {{ skill.name }}
-                                </span>
-                                <span class="text-muted">{{ skill.proficiency }}%</span>
-                            </div>
-                            <div class="progress" style="height: 10px;">
-                                <div class="progress-bar bg-warning" role="progressbar" 
-                                     style="width: {{ skill.proficiency }}%;" 
-                                     aria-valuenow="{{ skill.proficiency }}" 
-                                     aria-valuemin="0" aria-valuemax="100">
-                                </div>
+                {% for skill in hardware_skills %}
+                <div class="col-lg-6">
+                    <div class="skill-item">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="fw-semibold">
+                                {% if skill.icon %}<i class="{{ skill.icon }} me-2"></i>{% endif %}
+                                {{ skill.name }}
+                            </span>
+                            <span class="text-muted">{{ skill.proficiency }}%</span>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar bg-warning" role="progressbar"
+                                style="width: {{ skill.proficiency }}%;" aria-valuenow="{{ skill.proficiency }}"
+                                aria-valuemin="0" aria-valuemax="100">
                             </div>
                         </div>
                     </div>
-                    {% endfor %}
+                </div>
+                {% endfor %}
                 {% else %}
-                    <div class="col-12">
-                        <div class="alert alert-info">
-                            <i class="fas fa-info-circle me-2"></i>
-                            Hardware skills will be displayed here. Add them via the Django admin.
-                        </div>
+                <div class="col-12">
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i>
+                        Hardware skills will be displayed here. Add them via the Django admin.
                     </div>
+                </div>
                 {% endif %}
             </div>
         </div>
@@ -157,33 +154,32 @@
             </div>
             <div class="row g-4">
                 {% if web_skills %}
-                    {% for skill in web_skills %}
-                    <div class="col-lg-6">
-                        <div class="skill-item">
-                            <div class="d-flex justify-content-between mb-2">
-                                <span class="fw-semibold">
-                                    {% if skill.icon %}<i class="{{ skill.icon }} me-2"></i>{% endif %}
-                                    {{ skill.name }}
-                                </span>
-                                <span class="text-muted">{{ skill.proficiency }}%</span>
-                            </div>
-                            <div class="progress" style="height: 10px;">
-                                <div class="progress-bar bg-info" role="progressbar" 
-                                     style="width: {{ skill.proficiency }}%;" 
-                                     aria-valuenow="{{ skill.proficiency }}" 
-                                     aria-valuemin="0" aria-valuemax="100">
-                                </div>
+                {% for skill in web_skills %}
+                <div class="col-lg-6">
+                    <div class="skill-item">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="fw-semibold">
+                                {% if skill.icon %}<i class="{{ skill.icon }} me-2"></i>{% endif %}
+                                {{ skill.name }}
+                            </span>
+                            <span class="text-muted">{{ skill.proficiency }}%</span>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar bg-info" role="progressbar"
+                                style="width: {{ skill.proficiency }}%;" aria-valuenow="{{ skill.proficiency }}"
+                                aria-valuemin="0" aria-valuemax="100">
                             </div>
                         </div>
                     </div>
-                    {% endfor %}
+                </div>
+                {% endfor %}
                 {% else %}
-                    <div class="col-12">
-                        <div class="alert alert-info">
-                            <i class="fas fa-info-circle me-2"></i>
-                            Web development skills will be displayed here. Add them via the Django admin.
-                        </div>
+                <div class="col-12">
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i>
+                        Web development skills will be displayed here. Add them via the Django admin.
                     </div>
+                </div>
                 {% endif %}
             </div>
         </div>
@@ -191,7 +187,7 @@
 </section>
 
 <!-- Additional Competencies -->
-<section class="py-5 bg-light">
+<section class="py-5">
     <div class="container">
         <h2 class="text-center mb-5">Additional Competencies</h2>
         <div class="row g-4">
