@@ -1,21 +1,19 @@
-{% extends 'portfo_app/base.html' %}
+﻿{% extends 'portfo_app/base.html' %}
 {% load static %}
 
 {% block title %}Home - IT Professional Portfolio{% endblock %}
 
 {% block content %}
 <!-- Hero Section -->
-<section class="hero-section"
-    style="background: linear-gradient(rgba(37, 99, 235, 0.6), rgba(30, 41, 59, 0.7)), url('{% static 'images/hero-bg.jpg' %}') no-repeat center center / cover;">
+<section class="hero-section">
     <div class="container">
         <div class="row align-items-center min-vh-100">
             <div class="col-lg-8 mx-auto text-center">
-                <h1 class="display-3 fw-bold mb-3">Hi, I'm <span class="text-gradient-gold">Amoah Maxwell Dake</span>
-                </h1>
+                <h1 class="display-3 fw-bold mb-3">Hi, I'm <span class="text-primary">Amoah Maxwell Dake</span></h1>
                 <h2 class="h3 mb-4">IT & Network Specialist | Database & Web Developer</h2>
                 <p class="lead text-muted mb-5">
-                    Passionate IT professional with expertise in networking infrastructure,
-                    database management, hardware engineering, and modern web development.
+                    Passionate IT professional with expertise in networking infrastructure, 
+                    database management, hardware engineering, and modern web development. 
                     I turn complex technical challenges into elegant solutions.
                 </p>
                 <div class="d-flex gap-3 justify-content-center flex-wrap">
@@ -46,8 +44,7 @@
                             <i class="fas fa-network-wired fa-3x text-primary"></i>
                         </div>
                         <h5 class="card-title">Networking</h5>
-                        <p class="card-text text-muted">Network design, configuration, troubleshooting, and security
-                            implementation</p>
+                        <p class="card-text text-muted">Network design, configuration, troubleshooting, and security implementation</p>
                     </div>
                 </div>
             </div>
@@ -80,8 +77,7 @@
                             <i class="fas fa-code fa-3x text-info"></i>
                         </div>
                         <h5 class="card-title">Web Development</h5>
-                        <p class="card-text text-muted">Full-stack development with modern frameworks and best practices
-                        </p>
+                        <p class="card-text text-muted">Full-stack development with modern frameworks and best practices</p>
                     </div>
                 </div>
             </div>
@@ -106,8 +102,7 @@
                     {% if project.image %}
                     <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }}">
                     {% else %}
-                    <div class="card-img-top bg-secondary d-flex align-items-center justify-content-center"
-                        style="height: 200px;">
+                    <div class="card-img-top bg-secondary d-flex align-items-center justify-content-center" style="height: 200px;">
                         <i class="fas fa-project-diagram fa-4x text-white"></i>
                     </div>
                     {% endif %}
@@ -117,7 +112,7 @@
                         <p class="card-text text-muted">{{ project.description|truncatewords:20 }}</p>
                         <div class="mb-3">
                             {% for tool in project.get_tools_list %}
-                            <span class="badge bg-light text-body me-1">{{ tool }}</span>
+                            <span class="badge bg-light text-dark me-1">{{ tool }}</span>
                             {% endfor %}
                         </div>
                         <div class="d-flex gap-2">

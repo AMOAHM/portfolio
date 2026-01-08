@@ -1,0 +1,87 @@
+﻿commit cdc9364319e783770044888865af7fe11211d223
+Author: AMOAHM <maxzygh8@gmil.com>
+Date:   Thu Jan 8 10:51:38 2026 +0000
+
+    Fix hero background visibility and improve expertise section contrast
+
+diff --git a/portfo_app/templates/portfo_app/base.html b/portfo_app/templates/portfo_app/base.html
+index 134304f..18eedbf 100644
+--- a/portfo_app/templates/portfo_app/base.html
++++ b/portfo_app/templates/portfo_app/base.html
+@@ -14,7 +14,7 @@
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ 
+     <!-- Custom CSS -->
+-    <link rel="stylesheet" href="{% static 'css/style.css' %}?v=1.3">
++    <link rel="stylesheet" href="{% static 'css/style.css' %}?v=1.4">
+ 
+     {% block extra_css %}{% endblock %}
+ </head>
+diff --git a/static/css/style.css b/static/css/style.css
+index d4f4094..c414a97 100644
+--- a/static/css/style.css
++++ b/static/css/style.css
+@@ -23,7 +23,7 @@ body {
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     line-height: 1.6;
+     color: var(--text-color);
+-    background: linear-gradient(rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.95)), url('../images/hero-bg.jpg') !important;
++    background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('../images/hero-bg.jpg') !important;
+     background-size: cover;
+     background-position: center;
+     background-attachment: fixed;
+@@ -38,17 +38,7 @@ body {
+     box-sizing: border-box;
+ }
+ 
+-body {
+-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+-    line-height: 1.6;
+-    color: var(--text-color);
+-    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('../images/background.jpg');
+-    background-size: cover;
+-    background-position: center;
+-    background-attachment: fixed;
+-    padding-top: 56px;
+-    transition: color 0.3s ease;
+-}
++
+ 
+ /* Smooth Scrolling */
+ html {
+@@ -95,7 +85,7 @@ html {
+ 
+ /* Hero Section */
+ .hero-section {
+-    background: linear-gradient(rgba(37, 99, 235, 0.8), rgba(30, 41, 59, 0.9)), url('../images/hero-bg.jpg');
++    background: linear-gradient(rgba(37, 99, 235, 0.6), rgba(30, 41, 59, 0.7)), url('../images/hero-bg.jpg');
+     background-size: cover;
+     background-position: center;
+     color: white;
+@@ -108,7 +98,7 @@ html {
+ 
+ /* Dark Mode Hero Overlay */
+ body.dark-mode .hero-section {
+-    background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(2, 6, 23, 0.95)), url('../images/hero-bg.jpg');
++    background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(2, 6, 23, 0.75)), url('../images/hero-bg.jpg');
+     background-size: cover;
+     background-position: center;
+ }
+@@ -127,7 +117,7 @@ body.dark-mode .hero-section {
+ 
+ /* Page Header */
+ .page-header {
+-    background: linear-gradient(rgba(37, 99, 235, 0.85), rgba(30, 41, 59, 0.95)), url('../images/hero-bg.jpg');
++    background: linear-gradient(rgba(37, 99, 235, 0.7), rgba(30, 41, 59, 0.8)), url('../images/hero-bg.jpg');
+     background-size: cover;
+     background-position: center;
+     color: white;
+@@ -139,7 +129,7 @@ body.dark-mode .hero-section {
+ 
+ /* Dark Mode Page Header */
+ body.dark-mode .page-header {
+-    background: linear-gradient(rgba(15, 23, 42, 0.95), rgba(2, 6, 23, 0.98)), url('../images/hero-bg.jpg');
++    background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(2, 6, 23, 0.85)), url('../images/hero-bg.jpg');
+     background-size: cover;
+     background-position: center;
+ }
